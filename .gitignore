@@ -2,6 +2,7 @@
 
 # dependencies
 node_modules/
+.pnpm-store/
 
 # Expo
 .expo/
@@ -30,8 +31,22 @@ yarn-error.*
 .DS_Store
 *.pem
 
-# local env files
-.env*.local
+# --- SEGURANÇA E ARQUIVOS SENSÍVEIS ---
+# Bloqueia absolutamente qualquer arquivo de configuração ou variáveis de ambiente
+.env
+.env.local
+.env.production
+.env.development
+src/.env
+src/services/.env
+
+# --- ARQUIVOS ESPECÍFICOS DE EDITORES / AI ---
+# Evita enviar arquivos locais de ferramentas de desenvolvimento e IAs para o Github
+.claude/
+CLAUDE.md
+AGENTS.md
+.vscode/
+.idea/
 
 # typescript
 *.tsbuildinfo
